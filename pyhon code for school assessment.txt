@@ -1,6 +1,7 @@
 import time
 import pandas
 
+
 def num_checker(question, low, high):
     while True:
         error = f"Enter a valid option"
@@ -25,8 +26,8 @@ def string_checker(question, valid_ans):
         print(error)
 
 
-def not_blank(question):
-    error = "Please give a valid answer"
+def not_blank(question, valid_ans):
+    error = f"Please give a valid answer {valid_ans}"
     while True:
         user_name = input(question)
         if user_name != '':
@@ -38,7 +39,6 @@ def not_blank(question):
 # uses pizza id and the size variable to assign the pizza name and the price
 
 def pizza_selector(pizza, pizza_size):
-
     if pizza == 1 and pizza_size == "small":
         pizza_name = "Lamb Kebab"
         pizza_cost = 5
@@ -103,13 +103,119 @@ def pizza_selector(pizza, pizza_size):
     elif pizza == 7 and pizza_size == "medium":
         pizza_name = "Philly Cheese steak"
         pizza_cost = 9.99
-        
+    elif pizza == 7 and pizza_size == "large":
+        pizza_name = "Philly Cheese steak"
+        pizza_cost = 12
+
     elif pizza == 8 and pizza_size == "small":
         pizza_name = "Supreme"
         pizza_cost = 5
     elif pizza == 8 and pizza_size == "medium":
         pizza_name = "Supreme"
         pizza_cost = 9.99
+    elif pizza == 8 and pizza_size == "large":
+        pizza_name = "Supreme"
+        pizza_cost = 12
+
+    elif pizza == 9 and pizza_size == "small":
+        pizza_name = "Double Bacon Cheeseburger"
+        pizza_cost = 5
+    elif pizza == 9 and pizza_size == "medium":
+        pizza_name = "Double Bacon Cheeseburger"
+        pizza_cost = 9.99
+    elif pizza == 9 and pizza_size == "large":
+        pizza_name = "Double Bacon Cheeseburger"
+        pizza_cost = 12
+
+    elif pizza == 10 and pizza_size == "small":
+        pizza_name = "Butter Chicken"
+        pizza_cost = 5
+    elif pizza == 10 and pizza_size == "medium":
+        pizza_name = "Butter Chicken"
+        pizza_cost = 9.99
+    elif pizza == 10 and pizza_size == "large":
+        pizza_name = "Butter Chicken"
+        pizza_cost = 12
+
+    elif pizza == 11 and pizza_size == "small":
+        pizza_name = "BBQ Meat lovers"
+        pizza_cost = 5
+    elif pizza == 11 and pizza_size == "medium":
+        pizza_name = "BBQ Meat lovers"
+        pizza_cost = 9.99
+    elif pizza == 11 and pizza_size == "large":
+        pizza_name = "BBQ Meat lovers"
+        pizza_cost = 12
+
+    elif pizza == 12 and pizza_size == "small":
+        pizza_name = "Chicken Supreme"
+        pizza_cost = 5
+    elif pizza == 12 and pizza_size == "medium":
+        pizza_name = "Chicken Supreme"
+        pizza_cost = 9.99
+    elif pizza == 12 and pizza_size == "large":
+        pizza_name = "Chicken Supreme"
+        pizza_cost = 12
+
+    elif pizza == 13 and pizza_size == "small":
+        pizza_name = "Cheesy Garlic Pizza"
+        pizza_cost = 5
+    elif pizza == 13 and pizza_size == "medium":
+        pizza_name = "Cheesy Garlic Pizza"
+        pizza_cost = 9.99
+    elif pizza == 13 and pizza_size == "large":
+        pizza_name = "Cheesy Garlic Pizza"
+        pizza_cost = 12
+
+    elif pizza == 14 and pizza_size == "small":
+        pizza_name = "Pepperoni"
+        pizza_cost = 5
+    elif pizza == 14 and pizza_size == "medium":
+        pizza_name = "Pepperoni"
+        pizza_cost = 9.99
+    elif pizza == 14 and pizza_size == "large":
+        pizza_name = "Pepperoni"
+        pizza_cost = 12
+
+    elif pizza == 15 and pizza_size == "small":
+        pizza_name = "Ham Cheese"
+        pizza_cost = 5
+    elif pizza == 15 and pizza_size == "medium":
+        pizza_name = "Ham Cheese"
+        pizza_cost = 9.99
+    elif pizza == 15 and pizza_size == "large":
+        pizza_name = "Ham Cheese"
+        pizza_cost = 12
+
+    elif pizza == 16 and pizza_size == "small":
+        pizza_name = "Simply Cheese"
+        pizza_cost = 5
+    elif pizza == 16 and pizza_size == "medium":
+        pizza_name = "Simply Cheese"
+        pizza_cost = 9.99
+    elif pizza == 16 and pizza_size == "large":
+        pizza_name = "Simply Cheese"
+        pizza_cost = 12
+
+    elif pizza == 17 and pizza_size == "small":
+        pizza_name = "Hawaiian"
+        pizza_cost = 5
+    elif pizza == 17 and pizza_size == "medium":
+        pizza_name = "Hawaiian"
+        pizza_cost = 9.99
+    elif pizza == 17 and pizza_size == "large":
+        pizza_name = "Hawaiian"
+        pizza_cost = 12
+
+    elif pizza == 18 and pizza_size == "small":
+        pizza_name = "Mega Pepperoni"
+        pizza_cost = 5
+    elif pizza == 18 and pizza_size == "medium":
+        pizza_name = "Mega Pepperoni"
+        pizza_cost = 9.99
+    elif pizza == 18 and pizza_size == "large":
+        pizza_name = "Mega Pepperoni"
+        pizza_cost = 12
     else:
         pizza_name = "The Lot"
         pizza_cost = 12
@@ -195,77 +301,79 @@ time.sleep(.5)
 
 # Do you want the Menu?
 while True:
+    print()
+    want_menu = string_checker(f"Hello {name}, would you like the menu? ", yes_no)
+
+    if want_menu == "yes":
+        all_names = ["Lamb Kebab", "Crispy BBQ Pork Belly", "The Lot", "Chicken Bacon & Aoli", "Smokehouse Meat lover",
+                     "Peri-Peri chicken", "philly cheese steak", "supreme", "Double Bacon Cheeseburger", "Butter Chicken", "BBQ Meat lovers", "Chicken Supreme", "Cheesy Garlic Pizza", "Pepperoni", "Ham Cheese", "Simply Cheese", "Hawaiian", "Mega Pepperoni"]
+        # all_names
+        all_small_size = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+        all_medium_size = [9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99]
+        all_large_size = [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+        all_pizza_cost = [4.99, 9.99, 12]
+        all_surcharge = [0.00, 0.00]
+
+        df = pandas.DataFrame({
+            'Name': all_names,
+            'Small Size Cost': all_small_size,
+            'Medium Size Cost': all_medium_size,
+            'large Size Cost': all_large_size
+
+        })
+
+        # Set index to start from 1
+        df.index = range(1, len(df) + 1)
+
+        print(df)
+
+    keep_going = "yes"
+
+    # While loop for user to keep adding to their pizza order
+    while keep_going == "yes":
+        # Pizza id question
+        pizza_num_id = num_checker("Enter the pizza number: ", 1, 18)
+        pizza_order.append(pizza_num_id)
+
+        # Ask for size
+        size = string_checker("What Size | Small | Medium | Large |: ", size_option)
+        pizza_order_size.append(size)
+
+        user_pizza_selection, user_pizza_cost = pizza_selector(pizza_num_id, size)
+
+        print(f"Great! You have selected a {user_pizza_selection}:  ${user_pizza_cost}")
+
         print()
-        want_menu = string_checker(f"Hello {name}, would you like the menu? ", yes_no)
+        keep_going = string_checker("Do you want to order another pizza? ", yes_no)
 
-        if want_menu == "yes":
-            all_names = ["Lamb Kebab", "Crispy BBQ Pork Belly",  "The Lot", "Chicken Bacon & Aoli", "Smokehouse Meat lover", "Peri-Peri chicken", "philly cheese steak", "supreme"]
-            # all_names
-            all_small_size = [5, 5, 5, 5, 5, 5, 5, 5]
-            all_medium_size = [9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99]
-            all_large_size = [12, 12, 12, 12, 12, 12, 12, 12]
-            all_pizza_cost = [4.99, 9.99, 12]
-            all_surcharge = [0.00, 0.00]
+    print(f"You have ordered the following: {pizza_order} with the sizes: {pizza_order_size}")
 
-            df = pandas.DataFrame({
-                'Name': all_names,
-                'Small Size Cost': all_small_size,
-                'Medium Size Cost': all_medium_size
+    # Price summary for food
+    total_price = calculate_price(pizza_order_size, 'none', delivery)  # Use 'none' for initial calculation
+    print(f"Your order so far costs = ${total_price:.2f} (including delivery)")
 
-            })
+    # Time wait
+    time.sleep(1)
 
-            # Set index to start from 1
-            df.index = range(1, len(df) + 1)
+    # Would you like the drink menu question
+    want_menu = string_checker(f"{name}, would you like the drink menu? ", yes_no)
 
-            print(df)
-
-        keep_going = "yes"
-
-        # While loop for user to keep adding to their pizza order
-        while keep_going == "yes":
-            # Pizza id question
-            pizza_num_id = num_checker("Enter the pizza number: ", 1, 18)
-            pizza_order.append(pizza_num_id)
-
-            # Ask for size
-            size = string_checker("What Size | Small | Medium | Large |: ", size_option)
-            pizza_order_size.append(size)
-
-            user_pizza_selection, user_pizza_cost = pizza_selector(pizza_num_id, size)
-
-            print(f"Great! You have selected a {user_pizza_selection}:  ${user_pizza_cost}")
-
-            print()
-            keep_going = string_checker("Do you want to order another pizza? ", yes_no)
-
-        print(f"You have ordered the following: {pizza_order} with the sizes: {pizza_order_size}")
-
-        # Price summary for food
-        total_price = calculate_price(pizza_order_size, 'none', delivery)  # Use 'none' for initial calculation
-        print(f"Your order so far costs = ${total_price:.2f} (including delivery)")
-
-        # Time wait
-        time.sleep(1)
-
-        # Would you like the drink menu question
-        want_menu = string_checker(f"{name}, would you like the drink menu? ", yes_no)
-
-if want_menu == "yes":
-    # Drink menu
-    print('''\n
-    |--------Drink Menu--------|
-    |--------------------------|
-    | DRINKS            NUM ID |
-    | Lift                1    |        
-    | Fanta               2    |
-    | Coke                3    | 
-    | L & P               4    | 
-    | Sprite              5    | 
-    |--------------------------| 
-    | CAN  | BOTTLE |
-    | 3.30 |  5.50  |
-    |------|--------|
-    ''')
+    if want_menu == "yes":
+        # Drink menu
+        print('''\n
+        |--------Drink Menu--------|
+        |--------------------------|
+        | DRINKS            NUM ID |
+        | Lift                1    |        
+        | Fanta               2    |
+        | Coke                3    | 
+        | L & P               4    | 
+        | Sprite              5    | 
+        |--------------------------| 
+        | CAN  | BOTTLE |
+        | 3.30 |  5.50  |
+        |------|--------|
+        ''')
 
     keep_going = "yes"
 
@@ -288,51 +396,51 @@ if want_menu == "yes":
     print(f"You have ordered the following drinks with IDs: {drink_order}")
 
 # Time wait
-time.sleep(2)
+    time.sleep(2)
 
-# Order price calculator (including drink if selected)
-total_price = calculate_price(pizza_order_size, drink_size, delivery)
-print(f"Your final order costs = ${total_price:.2f} (including delivery)")
+    # Order price calculator (including drink if selected)
+    total_price = calculate_price(pizza_order_size, drink_size, delivery)
+    print(f"Your final order costs = ${total_price:.2f} (including delivery)")
 
-# Time wait
-time.sleep(1)
-
-# pizza ready message
-print("Your pizza will be ready from 10 to 20 minutes")
-print("dont touch the keyboard")
-
-# Time wait
-time.sleep(3)
-
-# Loading bar simulation
-
-time.sleep(1)
-
-loading_steps = [
-
-   "               ⣠⣤⣶⣶⣦⣄⣀",
-   "⠀            ⢰⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀",
-   "⠀    ⠀       ⢠⣷⣤⠀⠈⠙⢿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀",
-   "      ⠀   ⠀⠀⣠⣿⣿⣿⠆⠰⠶⠀⠘⢿⣿⣿⣿⣿⣿⣆⠀⠀⠀",
-   "⠀ ⠀       ⢀⣼⣿⣿⣿⠏⠀⢀⣠⣤⣤⣀⠙⣿⣿⣿⣿⣿⣷⡀⠀",
-   " ⠀     ⠀⡴⢡⣾⣿⣿⣷⠋⠁⣿⣿⣿⣿⣿⣿⣿⠃⠀⡻⣿⣿⣿⣿⡇",
-   "⠀⠀    ⢀⠜⠁⠸⣿⣿⣿⠟⠀⠀⠘⠿⣿⣿⣿⡿⠋⠰⠖⠱⣽⠟⠋⠉⡇",
-   "⠀⠀   ⡰⠉⠖⣀⠀⠀⢁⣀⠀⣴⣶⣦⠀⢴⡆⠀⠀⢀⣀⣀⣉⡽⠷⠶⠋⠀",
-   "⠀  ⠀⡰⢡⣾⣿⣿⣿⡄⠛⠋⠘⣿⣿⡿⠀⠀⣐⣲⣤⣯⠞⠉⠁⠀⠀⠀⠀⠀",
-   "  ⢀⠔⠁⣿⣿⣿⣿⣿⡟⠀⠀⠀⢀⣄⣀⡞⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀",
-   " ⠀⡜⠀⠀⠻⣿⣿⠿⣻⣥⣀⡀⢠⡟⠉⠉⠀⠀⠀⠀⠀",
-   " ⢰⠁⠀⡤⠖⠺⢶⡾⠃⠀⠈⠙⠋⠀⠀⠀⠀⠀",
-   " ⠈⠓⠾⠇⠀⠀⠀⠀"
-
-]
-for step in loading_steps:
-    print(step)
+    # Time wait
     time.sleep(1)
 
-# pizza ready message
-print("\nding!")
-time.sleep(1)
-print("Your pizza(s) is ready, enjoy")
+    # pizza ready message
+    print("Your pizza will be ready from 10 to 20 minutes")
+    print("dont touch the keyboard")
 
-# Time wait
-time.sleep(2)
+    # Time wait
+    time.sleep(3)
+
+    # Loading bar simulation
+
+    time.sleep(1)
+
+    loading_steps = [
+
+        "               ⣠⣤⣶⣶⣦⣄⣀",
+        "⠀            ⢰⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀",
+        "⠀    ⠀       ⢠⣷⣤⠀⠈⠙⢿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀",
+        "      ⠀   ⠀⠀⣠⣿⣿⣿⠆⠰⠶⠀⠘⢿⣿⣿⣿⣿⣿⣆⠀⠀⠀",
+        "⠀ ⠀       ⢀⣼⣿⣿⣿⠏⠀⢀⣠⣤⣤⣀⠙⣿⣿⣿⣿⣿⣷⡀⠀",
+        " ⠀     ⠀⡴⢡⣾⣿⣿⣷⠋⠁⣿⣿⣿⣿⣿⣿⣿⠃⠀⡻⣿⣿⣿⣿⡇",
+        "⠀⠀    ⢀⠜⠁⠸⣿⣿⣿⠟⠀⠀⠘⠿⣿⣿⣿⡿⠋⠰⠖⠱⣽⠟⠋⠉⡇",
+        "⠀⠀   ⡰⠉⠖⣀⠀⠀⢁⣀⠀⣴⣶⣦⠀⢴⡆⠀⠀⢀⣀⣀⣉⡽⠷⠶⠋⠀",
+        "⠀  ⠀⡰⢡⣾⣿⣿⣿⡄⠛⠋⠘⣿⣿⡿⠀⠀⣐⣲⣤⣯⠞⠉⠁⠀⠀⠀⠀⠀",
+        "  ⢀⠔⠁⣿⣿⣿⣿⣿⡟⠀⠀⠀⢀⣄⣀⡞⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀",
+        " ⠀⡜⠀⠀⠻⣿⣿⠿⣻⣥⣀⡀⢠⡟⠉⠉⠀⠀⠀⠀⠀",
+        " ⢰⠁⠀⡤⠖⠺⢶⡾⠃⠀⠈⠙⠋⠀⠀⠀⠀⠀",
+        " ⠈⠓⠾⠇⠀⠀⠀⠀"
+
+    ]
+    for step in loading_steps:
+        print(step)
+        time.sleep(1)
+
+    # pizza ready message
+    print("\nding!")
+    time.sleep(1)
+    print("Your pizza(s) is ready, enjoy")
+
+    # Time wait
+    time.sleep(2)
