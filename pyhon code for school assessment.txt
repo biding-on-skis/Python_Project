@@ -1,3 +1,4 @@
+
 import time
 import pandas as pd
 
@@ -35,195 +36,83 @@ def not_blank(question):
         else:
             print(error)
 
+def pizza_size_checker(pizza_size):
+    if pizza_size == "small":
+        return 5
+    elif pizza_size == "medium":
+        return 9.99
+    else:
+        return 12
+
+
+def drink_size_checker(drink_size):
+    if drink_size == "can":
+        return 3.3
+    else:
+        return 5
+
 
 # uses pizza id and the size variable to assign the pizza name and the price
-def pizza_selector(pizza, pizza_size):
+def pizza_selector(pizza):
     # Initialize variables with default values
     pizza_name = "The Lot"
     pizza_cost = 9.99
 
-    if pizza == 1 and pizza_size == "small":
+    if pizza == 1:
         pizza_name = "Lamb Kebab"
-        pizza_cost = 5
-    elif pizza == 1 and pizza_size == "medium":
-        pizza_name = "Lamb Kebab"
-        pizza_cost = 9.99
-    elif pizza == 1 and pizza_size == "large":
-        pizza_name = "Lamb Kebab"
-        pizza_cost = 12
 
-    elif pizza == 2 and pizza_size == "small":
+    elif pizza == 2:
         pizza_name = "Crispy BBQ Pork Belly"
-        pizza_cost = 5
-    elif pizza == 2 and pizza_size == "medium":
-        pizza_name = "Crispy BBQ Pork Belly"
-        pizza_cost = 9.99
-    elif pizza == 2 and pizza_size == "large":
-        pizza_name = "Crispy BBQ Pork Belly"
-        pizza_cost = 12
 
-    elif pizza == 3 and pizza_size == "small":
+    elif pizza == 3:
         pizza_name = "The Lot"
-        pizza_cost = 5
 
-    elif pizza == 2 and pizza_size == "medium":
-        pizza_name = "The Lot"
-        pizza_cost = 9.99
-
-    elif pizza == 4 and pizza_size == "small":
+    elif pizza == 4:
         pizza_name = "Chicken and bacon aoli"
-        pizza_cost = 5
-    elif pizza == 4 and pizza_size == "medium":
-        pizza_name = "Chicken and bacon aoli"
-        pizza_cost = 9.99
-    elif pizza == 4 and pizza_size == "large":
-        pizza_name = "Chicken and bacon aoli"
-        pizza_cost = 12
 
-    elif pizza == 5 and pizza_size == "small":
+    elif pizza == 5:
         pizza_name = "Smokehouse Meat lover"
-        pizza_cost = 5
-    elif pizza == 5 and pizza_size == "medium":
-        pizza_name = "Smokehouse Meat lover"
-        pizza_cost = 9.99
-    elif pizza == 5 and pizza_size == "large":
-        pizza_name = "Smokehouse Meat lover"
-        pizza_cost = 12
 
-    elif pizza == 6 and pizza_size == "small":
+    elif pizza == 6:
         pizza_name = "Peri-Peri Chicken"
-        pizza_cost = 5
-    elif pizza == 6 and pizza_size == "medium":
-        pizza_name = "Peri-Peri Chicken"
-        pizza_cost = 9.99
-    elif pizza == 6 and pizza_size == "large":
-        pizza_name = "Smokehouse Meat lover"
-        pizza_cost = 12
 
-    elif pizza == 7 and pizza_size == "small":
+    elif pizza == 7:
         pizza_name = "Philly Cheese steak"
-        pizza_cost = 5
-    elif pizza == 7 and pizza_size == "medium":
-        pizza_name = "Philly Cheese steak"
-        pizza_cost = 9.99
-    elif pizza == 7 and pizza_size == "large":
-        pizza_name = "Philly Cheese steak"
-        pizza_cost = 12
 
-    elif pizza == 8 and pizza_size == "small":
+    elif pizza == 8:
         pizza_name = "Supreme"
-        pizza_cost = 5
-    elif pizza == 8 and pizza_size == "medium":
-        pizza_name = "Supreme"
-        pizza_cost = 9.99
-    elif pizza == 8 and pizza_size == "large":
-        pizza_name = "Supreme"
-        pizza_cost = 12
 
-    elif pizza == 9 and pizza_size == "small":
+    elif pizza == 9:
         pizza_name = "Double Bacon Cheeseburger"
-        pizza_cost = 5
-    elif pizza == 9 and pizza_size == "medium":
-        pizza_name = "Double Bacon Cheeseburger"
-        pizza_cost = 9.99
-    elif pizza == 9 and pizza_size == "large":
-        pizza_name = "Double Bacon Cheeseburger"
-        pizza_cost = 12
 
-    elif pizza == 10 and pizza_size == "small":
+    elif pizza == 10:
         pizza_name = "Butter Chicken"
-        pizza_cost = 5
-    elif pizza == 10 and pizza_size == "medium":
-        pizza_name = "Butter Chicken"
-        pizza_cost = 9.99
-    elif pizza == 10 and pizza_size == "large":
-        pizza_name = "Butter Chicken"
-        pizza_cost = 12
 
-    elif pizza == 11 and pizza_size == "small":
+    elif pizza == 11:
         pizza_name = "BBQ Meat lovers"
-        pizza_cost = 5
-    elif pizza == 11 and pizza_size == "medium":
-        pizza_name = "BBQ Meat lovers"
-        pizza_cost = 9.99
-    elif pizza == 11 and pizza_size == "large":
-        pizza_name = "BBQ Meat lovers"
-        pizza_cost = 12
 
-    elif pizza == 12 and pizza_size == "small":
+    elif pizza == 12:
         pizza_name = "Chicken Supreme"
-        pizza_cost = 5
-    elif pizza == 12 and pizza_size == "medium":
-        pizza_name = "Chicken Supreme"
-        pizza_cost = 9.99
-    elif pizza == 12 and pizza_size == "large":
-        pizza_name = "Chicken Supreme"
-        pizza_cost = 12
 
-    elif pizza == 13 and pizza_size == "small":
+    elif pizza == 13:
         pizza_name = "Cheesy Garlic Pizza"
-        pizza_cost = 5
-    elif pizza == 13 and pizza_size == "medium":
-        pizza_name = "Cheesy Garlic Pizza"
-        pizza_cost = 9.99
-    elif pizza == 13 and pizza_size == "large":
-        pizza_name = "Cheesy Garlic Pizza"
-        pizza_cost = 12
 
-    elif pizza == 14 and pizza_size == "small":
+    elif pizza == 14:
         pizza_name = "Pepperoni"
-        pizza_cost = 5
-    elif pizza == 14 and pizza_size == "medium":
-        pizza_name = "Pepperoni"
-        pizza_cost = 9.99
-    elif pizza == 14 and pizza_size == "large":
-        pizza_name = "Pepperoni"
-        pizza_cost = 12
 
-    elif pizza == 15 and pizza_size == "small":
+    elif pizza == 15:
         pizza_name = "Ham Cheese"
-        pizza_cost = 5
-    elif pizza == 15 and pizza_size == "medium":
-        pizza_name = "Ham Cheese"
-        pizza_cost = 9.99
-    elif pizza == 15 and pizza_size == "large":
-        pizza_name = "Ham Cheese"
-        pizza_cost = 12
 
-    elif pizza == 16 and pizza_size == "small":
+    elif pizza == 16:
         pizza_name = "Simply Cheese"
-        pizza_cost = 5
-    elif pizza == 16 and pizza_size == "medium":
-        pizza_name = "Simply Cheese"
-        pizza_cost = 9.99
-    elif pizza == 16 and pizza_size == "large":
-        pizza_name = "Simply Cheese"
-        pizza_cost = 12
 
-    elif pizza == 17 and pizza_size == "small":
+    elif pizza == 17:
         pizza_name = "Hawaiian"
-        pizza_cost = 5
-    elif pizza == 17 and pizza_size == "medium":
-        pizza_name = "Hawaiian"
-        pizza_cost = 9.99
-    elif pizza == 17 and pizza_size == "large":
-        pizza_name = "Hawaiian"
-        pizza_cost = 12
 
-    elif pizza == 18 and pizza_size == "small":
+    else:
         pizza_name = "Mega Pepperoni"
-        pizza_cost = 5
-    elif pizza == 18 and pizza_size == "medium":
-        pizza_name = "Mega Pepperoni"
-        pizza_cost = 9.99
-    elif pizza == 18 and pizza_size == "large":
-        pizza_name = "Mega Pepperoni"
-        pizza_cost = 12
-    elif pizza == 3 and pizza_size == "large":
-        pizza_name = "The Lot"
-        pizza_cost = 12
 
-    return pizza_name, pizza_cost
+    return pizza_name
 
 # uses drink id and the size variable to assign the drink name and the price
 def drink_selector(drink, drink_size):
@@ -231,47 +120,23 @@ def drink_selector(drink, drink_size):
     drink_name = "Coke"
     drink_cost = 9.99
 
-    if drink == 1 and drink_size == "330":
+    if drink == 1:
             drink_name = "Coke"
-            drink_cost = 3.3
-    elif drink == 1 and drink_size == "1.5":
-            drink_name = "Coke"
-            drink_cost = 5
 
-    elif drink == 2 and drink_size == "330":
+    elif drink == 2:
             drink_name = "Fanta"
-            drink_cost = 3.3
-    elif drink == 2 and drink_size == "1.5":
-            drink_name = "Fanta"
-            drink_cost = 5
 
-    elif drink == 3 and drink_size == "330":
+    elif drink == 3:
             drink_name = "Lift"
-            drink_cost = 3.3
-    elif drink == 3 and drink_size == "1.5":
-            drink_name = "Lift"
-            drink_cost = 5
 
-    elif drink == 4 and drink_size == "330":
+    elif drink == 4:
             drink_name = "Sprite"
-            drink_cost = 3.3
-    elif drink == 4 and drink_size == "1.5":
-            drink_name = "Sprite"
-            drink_cost = 5
 
-    elif drink == 5 and drink_size == "330":
+    elif drink == 5:
             drink_name = "Coke Zero"
-            drink_cost = 3.3
-    elif drink == 5 and drink_size == "1.5":
-            drink_name = "Coke Zero"
-            drink_cost = 5
 
-    elif drink == 6 and drink_size == "330":
+    elif drink == 6 :
             drink_name = "L & P"
-            drink_cost = 3.3
-    elif drink == 6 and drink_size == "1.5":
-            drink_name = "L & P"
-            drink_cost = 5
 
     return drink_name, drink_cost
 
@@ -397,7 +262,8 @@ if want_menu == "yes":
         size = string_checker("What Size | Small | Medium | Large |: ", size_option)
         pizza_order_size.append(size)
 
-        user_pizza_selection, user_pizza_cost = pizza_selector(pizza_num_id, size)
+        user_pizza_selection = pizza_selector(pizza_num_id)
+        user_pizza_cost = pizza_size_checker(size)
 
         print(f"Great! You have selected a {user_pizza_selection}:  ${user_pizza_cost}")
 
@@ -507,7 +373,6 @@ if want_menu == "yes":
         " ⠀⡜⠀⠀⠻⣿⣿⠿⣻⣥⣀⡀⢠⡟⠉⠉⠀⠀⠀⠀⠀",
         " ⢰⠁⠀⡤⠖⠺⢶⡾⠃⠀⠈⠙⠋⠀⠀⠀⠀⠀",
         " ⠈⠓⠾⠇⠀⠀⠀⠀"
-
     ]
     for step in loading_steps:
         print(step)
