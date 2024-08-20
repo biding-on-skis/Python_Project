@@ -1,5 +1,5 @@
 import time
-import pandas
+import pandas as pd
 
 
 def num_checker(question, low, high):
@@ -26,8 +26,8 @@ def string_checker(question, valid_ans):
         print(error)
 
 
-def not_blank(question, valid_ans):
-    error = f"Please give a valid answer {valid_ans}"
+def not_blank(question):
+    error = "Please give a valid answer."
     while True:
         user_name = input(question)
         if user_name != '':
@@ -37,8 +37,11 @@ def not_blank(question, valid_ans):
 
 
 # uses pizza id and the size variable to assign the pizza name and the price
-
 def pizza_selector(pizza, pizza_size):
+    # Initialize variables with default values
+    pizza_name = "The Lot"
+    pizza_cost = 9.99
+
     if pizza == 1 and pizza_size == "small":
         pizza_name = "Lamb Kebab"
         pizza_cost = 5
@@ -216,16 +219,65 @@ def pizza_selector(pizza, pizza_size):
     elif pizza == 18 and pizza_size == "large":
         pizza_name = "Mega Pepperoni"
         pizza_cost = 12
-    else:
+    elif pizza == 3 and pizza_size == "large":
         pizza_name = "The Lot"
         pizza_cost = 12
 
     return pizza_name, pizza_cost
 
+# uses drink id and the size variable to assign the drink name and the price
+def drink_selector(drink, drink_size):
+    # Initialize variables with default values
+    drink_name = "Coke"
+    drink_cost = 9.99
+
+    if drink == 1 and drink_size == "330":
+            drink_name = "Coke"
+            drink_cost = 3.3
+    elif drink == 1 and drink_size == "1.5":
+            drink_name = "Coke"
+            drink_cost = 5
+
+    elif drink == 2 and drink_size == "330":
+            drink_name = "Fanta"
+            drink_cost = 3.3
+    elif drink == 2 and drink_size == "1.5":
+            drink_name = "Fanta"
+            drink_cost = 5
+
+    elif drink == 3 and drink_size == "330":
+            drink_name = "Lift"
+            drink_cost = 3.3
+    elif drink == 3 and drink_size == "1.5":
+            drink_name = "Lift"
+            drink_cost = 5
+
+    elif drink == 4 and drink_size == "330":
+            drink_name = "Sprite"
+            drink_cost = 3.3
+    elif drink == 4 and drink_size == "1.5":
+            drink_name = "Sprite"
+            drink_cost = 5
+
+    elif drink == 5 and drink_size == "330":
+            drink_name = "Coke Zero"
+            drink_cost = 3.3
+    elif drink == 5 and drink_size == "1.5":
+            drink_name = "Coke Zero"
+            drink_cost = 5
+
+    elif drink == 6 and drink_size == "330":
+            drink_name = "L & P"
+            drink_cost = 3.3
+    elif drink == 6 and drink_size == "1.5":
+            drink_name = "L & P"
+            drink_cost = 5
+
+    return drink_name, drink_cost
 
 def calculate_price(pizza_order_size, drink_size, delivery):
-    pizza_prices = {'small': 4.99, 'medium': 7.99, 'large': 12.99}
-    drink_prices = {'bottle': 5.50, 'can': 3.30}
+    pizza_prices = {'small': 5, 'medium': 9.99, 'large': 12}
+    drink_prices = {'bottle': 5, 'can': 3.30}
 
     # Calculate pizza cost
     pizza_cost = sum(pizza_prices[size] for size in pizza_order_size)
@@ -237,7 +289,7 @@ def calculate_price(pizza_order_size, drink_size, delivery):
 
     # Add $6 surcharge for delivery
     if delivery == "delivery":
-        return pizza_cost + drink_cost + 6.60
+        return pizza_cost + drink_cost + 6
     else:
         return pizza_cost + drink_cost
 
@@ -273,7 +325,7 @@ if want_instruc == "yes":
  pizza flavour, size, drink and drink size.
     ''')
 
-delivery = string_checker("Is this order to pick or delivery? ", deliv_option)
+delivery = string_checker("Is this order pick up or delivery? ", deliv_option)
 
 if delivery == "delivery":
     print("There is a $6 surcharge for delivery")
@@ -284,7 +336,7 @@ if delivery == "delivery":
 
     # Ask for phone number
     print()
-    phone_num = num_checker("Enter your phone number: ", 0, 9999999999)
+    phone_num = num_checker("Enter your phone number: ", 9999999, 99999999999)
 
     # Ask for address
     print()
@@ -294,38 +346,44 @@ else:
     # Ask for name and details
     name = not_blank("Enter your name: ")
     # Ask for phone number
-    phone_num = num_checker("Enter your phone number: ", 0, 9999999999)
+    phone_num = num_checker("Enter your phone number: ", 9999999, 99999999999)
 
 # Time wait
 time.sleep(.5)
 
 # Do you want the Menu?
-while True:
-    print()
-    want_menu = string_checker(f"Hello {name}, would you like the menu? ", yes_no)
+print()
+want_menu = string_checker(f"Hello {name}, would you like the menu? ", yes_no)
 
-    if want_menu == "yes":
-        all_names = ["Lamb Kebab", "Crispy BBQ Pork Belly", "The Lot", "Chicken Bacon & Aoli", "Smokehouse Meat lover",
-                     "Peri-Peri chicken", "philly cheese steak", "supreme", "Double Bacon Cheeseburger", "Butter Chicken", "BBQ Meat lovers", "Chicken Supreme", "Cheesy Garlic Pizza", "Pepperoni", "Ham Cheese", "Simply Cheese", "Hawaiian", "Mega Pepperoni"]
-        # all_names
-        all_small_size = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
-        all_medium_size = [9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99, 9.99]
-        all_large_size = [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
-        all_pizza_cost = [4.99, 9.99, 12]
-        all_surcharge = [0.00, 0.00]
+if want_menu == "yes":
 
-        df = pandas.DataFrame({
-            'Name': all_names,
-            'Small Size Cost': all_small_size,
-            'Medium Size Cost': all_medium_size,
-            'large Size Cost': all_large_size
+    # Set display options for pandas
 
-        })
+    all_names = ["Lamb Kebab", "Crispy BBQ Pork Belly", "The Lot", "Chicken Bacon & Aoli", "Smokehouse Meat lover",
+                 "Peri-Peri chicken", "philly cheese steak", "supreme", "Double Bacon Cheeseburger", "Butter Chicken", "BBQ Meat lovers", "Chicken Supreme", "Cheesy Garlic Pizza", "Pepperoni", "Ham Cheese", "Simply Cheese", "Hawaiian", "Mega Pepperoni"]
 
-        # Set index to start from 1
-        df.index = range(1, len(df) + 1)
+    # all_names
+    all_small_size = [5] * len(all_names)
+    all_medium_size = [9.99] * len(all_names)
+    all_large_size = [12] * len(all_names)
 
-        print(df)
+
+    df = pd.DataFrame({
+        'Name': all_names,
+        'Small Size Cost': all_small_size,
+        'Medium Size Cost': all_medium_size,
+        'large Size Cost': all_large_size
+
+    })
+
+    pd.set_option('display.max_columns', None)  # Show all columns
+    pd.set_option('display.expand_frame_repr', False)  # Prevent wrapping
+    pd.set_option('display.max_rows', None)  # Show all rows, if needed
+
+    # Set index to start from 1
+    df.index = range(1, len(df) + 1)
+
+    print(df)
 
     keep_going = "yes"
 
@@ -359,21 +417,30 @@ while True:
     want_menu = string_checker(f"{name}, would you like the drink menu? ", yes_no)
 
     if want_menu == "yes":
-        # Drink menu
-        print('''\n
-        |--------Drink Menu--------|
-        |--------------------------|
-        | DRINKS            NUM ID |
-        | Lift                1    |        
-        | Fanta               2    |
-        | Coke                3    | 
-        | L & P               4    | 
-        | Sprite              5    | 
-        |--------------------------| 
-        | CAN  | BOTTLE |
-        | 3.30 |  5.50  |
-        |------|--------|
-        ''')
+        # Set display options for pandas
+
+        all_names = ["Coke", "Fanta", "Lift", "Sprite", "Coke Zero", "L & P"]
+
+        # all_names
+        all_CanmL_size = [3.3] * len(all_names)
+        all_BottleLitre_size = [5] * len(all_names)
+
+
+        df = pd.DataFrame({
+            'Name': all_names,
+            'Bottle (1.5L) Size Cost': all_CanmL_size,
+            'Can (330mL) Cost': all_BottleLitre_size,
+
+        })
+
+        pd.set_option('display.max_columns', None)  # Show all columns
+        pd.set_option('display.expand_frame_repr', False)  # Prevent wrapping
+        pd.set_option('display.max_rows', None)  # Show all rows, if needed
+
+        # Set index to start from 1
+        df.index = range(1, len(df) + 1)
+
+        print(df)
 
     keep_going = "yes"
 
@@ -381,21 +448,30 @@ while True:
     while keep_going == "yes":
         # Drink selection question
         drink_num_id = num_checker("Enter the drink number: ", 1, 6)
-        drink_order.append(drink_num_id)
-
-        # Drink size (bottle or can)
         drink_size = string_checker("What Size | Bottle (1.5L) | Can (330mL) |: ", size_drink)
 
-        print(f"Great! You have selected a {drink_size} drink with id {drink_num_id}")
+        # Fetch drink name and cost using the selector function
+        drink_name, drink_cost = drink_selector(drink_num_id, drink_size)
+
+        print(f"Great! You have selected a {drink_name} ({drink_size})")
+
+        # Add drink to order
+        drink_order.append(drink_num_id)
 
         # loop question yes/no
         keep_going = string_checker("Do you want to order another drink? ", yes_no)
 
-    time.sleep(3)
+    # After finishing drink orders, display all selected drinks
+    print(f"You have ordered the following drinks:")
+    for drink_id in drink_order:
+        drink_name, _ = drink_selector(drink_id, '330')  # assuming default size for display
+        print(f"- {drink_name}")
 
-    print(f"You have ordered the following drinks with IDs: {drink_order}")
+    # Order price calculator (including drink if selected)
+    total_price = calculate_price(pizza_order_size, drink_size, delivery)
+    print(f"Your final order costs = ${total_price:.2f} (including delivery)")
 
-# Time wait
+    # Time wait
     time.sleep(2)
 
     # Order price calculator (including drink if selected)
